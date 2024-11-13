@@ -1,0 +1,70 @@
+<form [formGroup]="myForm" (ngSubmit)="signup()">
+<section class="vh-90 gradient-custom" >
+    <div class="container py-5 h-100" >
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem">
+            <div class="card-body p-5 text-center">
+              <div class="mb-md-5 mt-md-4 pb-5">
+                <h2 class="fw-bold mb-2 text-uppercase">Signup</h2>
+                <p class="text-white-50 mb-5">
+                  Please enter your details!
+                </p>
+  
+                <span *ngIf="getUserName().invalid && (getUserName().touched || getUserName().dirty)" class="text-danger">This field is required</span>
+                <div data-mdb-input-init class="form-outline form-white mb-4">
+                  <input
+                    type="text"
+                    id="typeNameX"
+                    formControlName="username"
+                    class="form-control form-control-lg"
+                    [(ngModel)]="name"
+
+                  />
+                  <label class="form-label" for="typeNameX">Name</label>
+                </div>
+
+                <span *ngIf="getUserEmail().invalid && (getUserEmail().touched || getUserEmail().dirty)" class="text-danger">The field is not valid</span>
+                <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input
+                      type="email"
+                      id="typeEmailX"
+                      formControlName="useremail"
+                      class="form-control form-control-lg"
+                      [(ngModel)]="email"
+                    />
+                    <label class="form-label" for="typeNameX">Email</label>
+                  </div>
+
+                  <span *ngIf="getUserPassword().invalid && (getUserPassword().touched || getUserPassword().dirty)" class="text-danger">This field is required</span>
+                <div data-mdb-input-init class="form-outline form-white mb-4">
+                  <input
+                    type="password"
+                    id="typePasswordX"
+                    formControlName="userpassword"
+                    class="form-control form-control-lg"
+                    [(ngModel)]="password"
+                    
+                  />
+                  <label class="form-label" for="typePasswordX">Password</label>
+                </div>
+  
+                <button
+                  data-mdb-button-init
+                  data-mdb-ripple-init
+                  class="btn btn-outline-light btn-lg px-5 mb-0"
+                  type="submit" 
+                  [disabled]="!myForm.valid"
+                  >
+                  SignUp
+                </button>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</form>
+  

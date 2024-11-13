@@ -1,0 +1,44 @@
+<div class="container">
+  <div *ngFor="let song of songs" class="songs-list">
+    <input
+      class="form-check-input"
+      type="checkbox"
+      [name]="song.songId"
+      (change)="toggleSongSelection(song.songId, $event)"
+    />
+    &nbsp; &nbsp;
+    <label for="{{ song.songId }}">
+      {{ song.songName }} - {{ song.singerFirstName }}
+      {{ song.singerLastName }} &nbsp; &nbsp; &nbsp;
+      <button id="like-btn" (click)="addLikeToSong(song.songId)">
+        <img src="../../assets/icons/white like.png" alt="like" />
+      </button>
+      <audio [src]="'../../assets/songs/' + song.songUrl" controls></audio
+    ></label>
+
+    <hr />
+  </div>
+</div>
+
+<div class="actions-box">
+  <button (click)="playSelectedSong()" class="btn btn-light">Play</button>
+  <br />
+  <br />
+  <button (click)="createPlaylist()" class="btn btn-light">
+    Create Playlist
+  </button>
+  <br />
+  <br />
+  <p *ngIf="playlistName.length > 20" class="alert-danger">
+    The playlist name should be up to 20 characters long
+  </p>
+  <input
+    type="text"
+    placeholder="Name to your playlist"
+    [(ngModel)]="playlistName"
+  />
+</div>
+
+<div class="scroll-to-top" (click)="scrollToTop()" *ngIf="showScrollButton">
+  <img src="../../assets/icons/upload.png" alt="upload arrow" width="50px" />
+</div>

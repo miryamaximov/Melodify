@@ -1,0 +1,17 @@
+<div class="singer-list">
+  <div class="singer-card" *ngFor="let item of singers">
+    <img
+      src="../../assets/pictures/{{item.imageUrl}}"
+      alt="{{ item.singerFirstName }}"
+      class="singer-image"
+    />
+    <h2>{{ item.singerFirstName }} {{ item.singerLastName }}</h2>
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="goToDetails(item.singerId)"
+    >
+      למידע נוסף
+    </button>
+  </div>
+</div>

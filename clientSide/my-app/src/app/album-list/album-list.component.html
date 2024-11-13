@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-4" >
+    <div class="list-group album-details" *ngFor="let album of albums">
+      <li class="list-group-item list-group-item-action">
+        {{ album.albumName }} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp;
+        <button
+          type="button"
+          style="color: #1db954"
+          class="btn btn-outline-dark"
+          (click)="goToAlbumDetails(album.albumId)"
+        >
+          show songs
+        </button>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        {{ album.albumSingerFirstName }} {{ album.albumSingerLastName }} 
+      </li>
+    </div>
+  </div>
+
+  <div class="col-8">
+    <router-outlet></router-outlet>
+  </div>
+</div>

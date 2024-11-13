@@ -1,0 +1,7 @@
+<div class="category-list">
+  <div *ngFor="let category of categories">
+    <button (click)="showSongsOfCategory(category.categoryId)">
+      <div class="category-card">{{ category.categoryName }}</div>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="main-container">
+
+<div class="center-box" *ngIf="!userService.isConnect">
+    <p>You must log in to see your playlists...</p>
+</div>
+
+<!-- הצגת הפלייליסטים ואפשרות למעבר לשמיעת הפלייליסט -->
+<div class="playlist-container" *ngIf="userService.isConnect">
+    <h2 class="playlist-title">הפלייליסטים שלי</h2>
+    <div class="playlist" *ngFor="let p of playlists">
+      <div class="playlist-info">
+        <h3 class="playlist-name">{{ p.playlistName }}</h3>
+        <p class="playlist-description">{{ p.productionDate }}</p>
+      </div>
+      <button (click)="playPlaylist(p.playlistId)" class="view-songs-btn">הצג שירים</button>
+    </div>
+
+    </div>
+
+    <div class="image-container" *ngIf="userService.isConnect">
+        <img src="../../assets/icons/man-4807395_1280.jpg" alt="Relaxing image" class="side-image" />
+      </div>
+    </div>
+
+  
+

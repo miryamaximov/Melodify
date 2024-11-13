@@ -1,0 +1,15 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+p {
+    border: 1px solid black;
+    padding: 20px;
+    width: 60%;
+    text-align: justify;
+    line-height: 1.5;
+}

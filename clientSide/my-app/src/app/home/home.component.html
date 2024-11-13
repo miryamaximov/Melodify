@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>welcome {{ userServ.currUser.userName }}</h2>
+
+  <div class="singer-day">
+    Today's singer is {{ singer.singerFirstName }} {{ singer.singerLastName }}
+    <br />
+    Have a {{ singer.numOfAlbums }} albums, {{ singer.numOfSongs }} songs
+    <br />
+  </div>
+  <div
+    class="image-container"
+    (mouseover)="hover = true"
+    (mouseleave)="hover = false"
+  >
+    <img src="../../assets/pictures/{{ singer.imageUrl }}" alt="daily singer" />
+    <button (click)="showMore()" class="center-button" *ngIf="hover">
+      Click here to see more
+    </button>
+  </div>
+  <div class="top-songs">
+    The 5 top songs <br />
+    <ul *ngFor="let song of songs">
+      <li>{{ song.songName }}</li>
+    </ul>
+  </div>
+</div>

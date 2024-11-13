@@ -1,0 +1,63 @@
+<div class="music-player">
+  <h2>Music Player</h2>
+  <!-- תצוגה של השיר הנוכחי שמושמע ברקע -->
+  <div class="current-song">
+    <h3>{{ songs[currentSongIndex].songName }}</h3>
+    <div>
+      {{ songs[currentSongIndex].singerFirstName }}
+      {{ songs[currentSongIndex].singerLastName }}
+    </div>
+    <button (click)="pauseSong()">
+      <img
+        *ngIf="isPlaying"
+        src="../../assets/icons/video.png"
+        alt="pause song"
+        width="50px"
+      />
+      <img
+        *ngIf="!isPlaying"
+        src="../../assets/icons/play.png"
+        alt="play song"
+        width="50px"
+      />
+    </button>
+  </div>
+
+  <!-- רשימת כל השירים באלבום או הפלייליסט -->
+  <div class="song-list">
+    <ul>
+      <div *ngFor="let song of songs; let i = index">
+        <button (click)="playSong(i)">{{ song.songName }}</button>
+      </div>
+    </ul>
+  </div>
+
+  <!-- הכפתורים של קדימה ואחורה -->
+  <div class="controls">
+    <button (click)="previousSong()">
+      <img src="../../assets/icons/previous.png" alt="previous song" />
+    </button>
+    <button (click)="nextSong()">
+      <img src="../../assets/icons/next-button.png" alt="next song" />
+    </button>
+  </div>
+</div>
+
+<div class="volume">
+  <button (click)="increaseVolume()">
+    <img
+      src="../../assets/icons/volume-control.png"
+      alt="volume up"
+      width="50px"
+    />
+  </button>
+
+  <img src="../../assets/icons/volume-up.png" alt="volume" width="50px" />
+  <button (click)="decreaseVolume()">
+    <img
+      src="../../assets/icons/volume-down.png"
+      alt="volume down"
+      width="50px"
+    />
+  </button>
+</div>

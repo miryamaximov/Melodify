@@ -1,0 +1,21 @@
+
+.music-player{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    border: none;
+    background-color: transparent;
+}
+
+
+.controls button img{
+    width: 50px;
+    height: auto;
+}
+
+.song-list{
+   
+}

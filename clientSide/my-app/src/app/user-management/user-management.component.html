@@ -1,0 +1,60 @@
+<!-- כאן תוצג רשימת המשתמשים ויהיה אפשרות למנהל למחוק משתמש או לערוך פרטי משתמש קיים -->
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Password</th>
+      <th scope="col">Email</th>
+      <th scope="col">Is Admin?</th>
+      <th scope="col">Number of playlists</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.userName }}</td>
+      <td>{{ user.userPass }}</td>
+      <td>{{ user.userEmail }}</td>
+      <td>{{ user.isAdmin }}</td>
+      <td>{{ user.numOfPlaylists }}</td>
+      <td>
+        <button
+          (click)="confirmDeleteUser(user.userId)"
+          type="button"
+          class="btn btn-outline-dark"
+        >
+          Delete
+        </button>
+      </td>
+      <td>
+        <button
+          (click)="editUser(user.userId)"
+          type="button"
+          class="btn btn-outline-dark"
+        >
+          Edit
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div [ngStyle]="{ display: isFormVisible ? 'block' : 'none' }">
+  <form (ngSubmit)="save()">
+    <input type="text" placeholder="name" name="userName" [(ngModel)]="name" />
+    <br />
+    <input
+      type="text"
+      placeholder="password"
+      name="pass"
+      [(ngModel)]="password"
+    />
+    <br />
+    <input type="email" placeholder="email" name="email" [(ngModel)]="email" />
+    <br />
+    <input type="text" placeholder="admin" name="isAdmin" [(ngModel)]="admin" />
+    <br />
+    <input type="submit" value="Edit" /> <br />
+  </form>
+</div>

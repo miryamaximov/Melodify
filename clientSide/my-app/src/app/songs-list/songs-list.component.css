@@ -1,0 +1,117 @@
+.container {
+  margin-top: 30px;
+  max-width: 1000px;
+}
+
+.container label {
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.actions-box {
+  position: fixed;
+  top: 200px;
+  right: 50px;
+  background-color: #333;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  max-width: 300px;
+  margin: 20px auto;
+  color: #f1f1f1;
+  text-align: center;
+}
+
+.songs-list {
+  margin-right: 250px;
+  transition: box-shadow 0.3s ease;
+  border-radius: 3px;
+}
+
+.songs-list:hover {
+  box-shadow: 0 0 5px #1db954, 0 0 10px #1db954, 0 0 20px #1db954;
+  border-color: transparent;
+}
+
+audio {
+  margin-left: auto;
+}
+
+hr {
+  color: #1db954;
+}
+
+.actions-box button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #555;
+  color: #f1f1f1;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.actions-box button:hover {
+  background-color: #1db954;
+  transform: translateY(-3px);
+}
+
+.actions-box button:active {
+  transform: translateY(1px);
+}
+
+.actions-box input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: #222;
+  color: #f1f1f1;
+}
+
+.actions-box input[type="text"]::placeholder {
+  color: #888;
+}
+
+.actions-box .alert-danger {
+  font-size: 14px;
+  color: #e74c3c;
+  margin-top: 10px;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  left: 40px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#like-btn {
+  background: transparent;
+  border: none;
+}
+
+#like-btn img {
+  width: 40px;
+  right: auto;
+}
+
+#like-btn img:active {
+  width: 50px;
+}

@@ -1,0 +1,23 @@
+<nav class="navbar">
+  <div class="logo">
+    <a href="/">Your Music</a>
+  </div>
+  <ul class="nav-links">
+    <li><a routerLink="home">Home</a></li>
+    <li><a routerLink="login">Log In</a></li>
+    <!-- <li><a routerLink="signup">Sign Up</a></li> -->
+    <li><a routerLink="user-playlists">My Playlists</a></li>
+    <li><a routerLink="singers">Singers</a></li>
+    <li><a routerLink="albums">Albums</a></li>
+    <li><a routerLink="categories">Categories</a></li>
+    <li><a routerLink="songs">Songs</a></li>
+    <li *ngIf="userServ.isAdmin"><a routerLink="manage-users">Management Users</a></li>
+    <li *ngIf="userServ.isAdmin"><a routerLink="manage-content">Management Content</a></li>
+
+  </ul>
+  <div class="user-profile">
+    <span style="color: white;">{{userServ.currUser.userName}} </span><a routerLink="profile">Profile</a>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
